@@ -1,34 +1,12 @@
-name: Build
+org.gradle.jvmargs=-Xmx2G
+org.gradle.parallel=true
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-  workflow_dispatch:
+minecraft_version=26.2
+loader_version=0.19.3
+loom_version=1.17.20
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+mod_version=1.0.0
+maven_group=net.voidstalker
+archives_base_name=void-stalker
 
-      - name: Set up JDK 25
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 25
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Generate Gradle wrapper jar
-        run: gradle wrapper --gradle-version 9.5.1
-
-      - name: Build
-        run: ./gradlew build --no-daemon
-
-      - name: Upload jar artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: void-stalker-jar
-          path: build/libs/*.jar
+fabric_api_version=0.154.0+26.2
