@@ -23,23 +23,21 @@ jobs:
       - name: Grant execute permission
         run: chmod +x gradlew
 
-      - name: Build JAR
-        run: |
-          ./gradlew clean jar --no-daemon --stacktrace --info > build-log.txt 2>&1 || true
-          cat build-log.txt
+      - name: Build
+        run: ./gradlew clean build --no-daemon --stacktrace
 
-      - name: Show JAR files
+      - name: Check generated JAR
         if: always()
         run: |
-          echo "=== JAR FILES ==="
+          echo "=== build/libs ==="
+          ls -la build/libs || true
+          echo "=== all JAR files ==="
           find . -type f -name "*.jar" -print
-          echo "=== BUILD LOG ==="
-          cat build-log.txt
 
       - name: Upload JAR
-        if: always()
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: void-stalker-jar
           path: build/libs/*.jar
-          if-no-files-found: warn
+          if-no-files-found: error
