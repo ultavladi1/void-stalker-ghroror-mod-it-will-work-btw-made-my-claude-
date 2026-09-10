@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Java 25
@@ -20,24 +20,23 @@ jobs:
           distribution: temurin
           java-version: '25'
 
-      - name: Make Gradle executable
-        run: chmod +x ./gradlew
-
-      - name: Check Gradle version
-        run: ./gradlew --version
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.0'
 
       - name: Build mod
-        run: ./gradlew clean build --no-daemon --stacktrace
+        run: gradle clean build --no-daemon --stacktrace
 
-      - name: Show generated files
+      - name: Show JAR
         if: always()
         run: |
-          echo "=== build/libs ==="
-          ls -lah build/libs || true
           echo "=== JAR FILES ==="
           find . -type f -name "*.jar" -print
+          echo "=== BUILD/LIBS ==="
+          ls -lah build/libs || true
 
-      - name: Upload mod JAR
+      - name: Upload JAR
         if: success()
         uses: actions/upload-artifact@v4
         with:
