@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
+    id "net.fabricmc.fabric-loom" version "${loom_version}"
     id 'maven-publish'
 }
 
@@ -11,7 +11,7 @@ base {
 }
 
 repositories {
-    // Mojang mappings + Fabric artifacts come from the loom plugin's own repos.
+    // Fabric artifacts come from the loom plugin's own repos.
     // Add extra repos here only if a dependency needs one.
 }
 
@@ -27,14 +27,9 @@ loom {
 }
 
 dependencies {
-    // Minecraft 26.2 ships fully unobfuscated with official Mojang names,
-    // so Loom is configured to use official mappings (no Yarn step).
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-    // Fabric API
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
 processResources {
