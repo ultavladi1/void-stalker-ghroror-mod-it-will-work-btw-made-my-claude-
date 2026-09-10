@@ -19,14 +19,17 @@ jobs:
           distribution: temurin
           java-version: 25
 
-      - name: Grant execute permission for gradlew
+      - name: Grant execute permission
         run: chmod +x gradlew
 
-      - name: Build
-        run: ./gradlew build --no-daemon
+      - name: Build JAR
+        run: ./gradlew jar --no-daemon
 
-      - name: Upload jar artifact
+      - name: Show generated files
+        run: find . -name "*.jar" -type f
+
+      - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: void-stalker-jar
-          path: build/libs/*.jar
+          path: "**/*.jar"
