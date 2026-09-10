@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:block/template_lantern",
+  "textures": { "lantern": "voidstalker:block/void_lantern" }
+}

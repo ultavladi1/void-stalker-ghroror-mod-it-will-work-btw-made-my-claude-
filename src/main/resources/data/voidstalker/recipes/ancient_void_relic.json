@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SES",
+    "EYE",
+    "SES"
+  ],
+  "key": {
+    "S": { "item": "voidstalker:void_shard" },
+    "E": { "item": "voidstalker:corrupted_essence" },
+    "Y": { "item": "voidstalker:stalker_eye" }
+  },
+  "result": { "id": "voidstalker:ancient_void_relic", "count": 1 }
+}

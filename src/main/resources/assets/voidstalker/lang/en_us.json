@@ -1,0 +1,42 @@
+{
+  "itemGroup.voidstalker.void_stalker": "Void Stalker",
+
+  "item.voidstalker.void_shard": "Void Shard",
+  "item.voidstalker.corrupted_essence": "Corrupted Essence",
+  "item.voidstalker.stalker_eye": "Stalker Eye",
+  "item.voidstalker.void_sword": "Void Sword",
+  "item.voidstalker.void_pickaxe": "Void Pickaxe",
+  "item.voidstalker.void_axe": "Void Axe",
+  "item.voidstalker.void_shovel": "Void Shovel",
+  "item.voidstalker.void_hoe": "Void Hoe",
+  "item.voidstalker.void_helmet": "Void Helmet",
+  "item.voidstalker.void_chestplate": "Void Chestplate",
+  "item.voidstalker.void_leggings": "Void Leggings",
+  "item.voidstalker.void_boots": "Void Boots",
+  "item.voidstalker.void_compass": "Void Compass",
+  "item.voidstalker.ancient_void_relic": "Ancient Void Relic",
+  "item.voidstalker.stalker_spawn_egg": "Stalker Spawn Egg",
+  "item.voidstalker.voidling_spawn_egg": "Voidling Spawn Egg",
+  "item.voidstalker.void_brute_spawn_egg": "Void Brute Spawn Egg",
+  "item.voidstalker.void_watcher_spawn_egg": "Void Watcher Spawn Egg",
+
+  "item.voidstalker.void_compass.hint": "The pull is %s, roughly %sm away...",
+  "item.voidstalker.void_compass.nothing": "...nothing answers.",
+
+  "block.voidstalker.void_stone": "Void Stone",
+  "block.voidstalker.corrupted_stone": "Corrupted Stone",
+  "block.voidstalker.void_crystal_ore": "Void Crystal Ore",
+  "block.voidstalker.void_bricks": "Void Bricks",
+  "block.voidstalker.ancient_void_block": "Ancient Void Block",
+  "block.voidstalker.void_lantern": "Void Lantern",
+
+  "entity.voidstalker.stalker": "The Stalker",
+  "entity.voidstalker.voidling": "Voidling",
+  "entity.voidstalker.void_brute": "Void Brute",
+  "entity.voidstalker.void_watcher": "Void Watcher",
+
+  "voidstalker.tooltip.void_shard": "Cold to the touch. It seems to shift when you're not looking directly at it.",
+  "voidstalker.tooltip.corrupted_essence": "Something that used to be something else.",
+  "voidstalker.tooltip.stalker_eye": "It is still watching.",
+  "voidstalker.tooltip.ancient_void_relic": "Older than anything else you've found here."
+}

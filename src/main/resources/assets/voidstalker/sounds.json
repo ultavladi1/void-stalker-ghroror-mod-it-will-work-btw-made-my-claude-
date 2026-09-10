@@ -1,0 +1,47 @@
+{
+  "stalker_appear": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.stalker.appear",
+    "sounds": [ "voidstalker:stalker/appear1" ]
+  },
+  "stalker_ambient": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.stalker.ambient",
+    "sounds": [ "voidstalker:stalker/ambient1", "voidstalker:stalker/ambient2" ]
+  },
+  "stalker_teleport": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.stalker.teleport",
+    "sounds": [ "voidstalker:stalker/teleport1" ]
+  },
+  "distant_whisper": {
+    "category": "ambient",
+    "subtitle": "subtitles.voidstalker.distant_whisper",
+    "sounds": [ "voidstalker:ambient/whisper1", "voidstalker:ambient/whisper2" ]
+  },
+  "voidling_ambient": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.voidling.ambient",
+    "sounds": [ "voidstalker:voidling/ambient1" ]
+  },
+  "void_brute_ambient": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.void_brute.ambient",
+    "sounds": [ "voidstalker:void_brute/ambient1" ]
+  },
+  "void_watcher_ambient": {
+    "category": "hostile",
+    "subtitle": "subtitles.entity.voidstalker.void_watcher.ambient",
+    "sounds": [ "voidstalker:void_watcher/ambient1" ]
+  },
+  "shrine_ambient": {
+    "category": "ambient",
+    "subtitle": "subtitles.voidstalker.shrine_ambient",
+    "sounds": [ "voidstalker:structure/shrine_ambient1" ]
+  },
+  "random_horror_sting": {
+    "category": "ambient",
+    "subtitle": "subtitles.voidstalker.random_horror_sting",
+    "sounds": [ "voidstalker:ambient/sting1", "voidstalker:ambient/sting2" ]
+  }
+}

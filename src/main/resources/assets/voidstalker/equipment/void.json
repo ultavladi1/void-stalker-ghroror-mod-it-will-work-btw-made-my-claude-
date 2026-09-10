@@ -1,0 +1,6 @@
+{
+  "layers": {
+    "humanoid": [ { "texture": "voidstalker:void" } ],
+    "humanoid_leggings": [ { "texture": "voidstalker:void_leggings" } ]
+  }
+}

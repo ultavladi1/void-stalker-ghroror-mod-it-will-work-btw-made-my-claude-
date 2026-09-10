@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SS",
+    "SC",
+    " C"
+  ],
+  "key": {
+    "S": { "item": "voidstalker:void_shard" },
+    "C": { "item": "minecraft:stick" }
+  },
+  "result": { "id": "voidstalker:void_axe", "count": 1 }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "EEE",
+    "E E"
+  ],
+  "key": { "E": { "item": "voidstalker:corrupted_essence" } },
+  "result": { "id": "voidstalker:void_helmet", "count": 1 }
+}

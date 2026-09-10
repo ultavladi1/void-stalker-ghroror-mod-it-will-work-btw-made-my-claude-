@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "voidstalker",
+  "version": "${version}",
+  "name": "Void Stalker",
+  "description": "An atmospheric horror survival mod. Something is watching you.",
+  "authors": ["You"],
+  "contact": {},
+  "license": "CC0-1.0",
+  "icon": "assets/voidstalker/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["net.voidstalker.VoidStalkerMod"],
+    "client": ["net.voidstalker.client.VoidStalkerClient"]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

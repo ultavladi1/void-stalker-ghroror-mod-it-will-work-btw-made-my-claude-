@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "hanging=false": { "model": "voidstalker:block/void_lantern" },
+    "hanging=true": { "model": "voidstalker:block/void_lantern_hanging" }
+  }
+}

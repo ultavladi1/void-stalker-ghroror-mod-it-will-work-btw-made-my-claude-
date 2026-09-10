@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "SES",
+    " S "
+  ],
+  "key": {
+    "S": { "item": "voidstalker:void_shard" },
+    "E": { "item": "minecraft:echo_shard" }
+  },
+  "result": { "id": "voidstalker:void_compass", "count": 1 }
+}

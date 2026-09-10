@@ -1,0 +1,1 @@
+-- put void.png (main layer: helmet/chest/boots) and void_leggings.png (legs layer) here, 64x32 like vanilla armor layer textures --

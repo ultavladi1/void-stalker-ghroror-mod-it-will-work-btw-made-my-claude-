@@ -1,0 +1,62 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    // Mojang mappings + Fabric artifacts come from the loom plugin's own repos.
+    // Add extra repos here only if a dependency needs one.
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        "voidstalker" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    // Minecraft 26.2 ships fully unobfuscated with official Mojang names,
+    // so Loom is configured to use official mappings (no Yarn step).
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}

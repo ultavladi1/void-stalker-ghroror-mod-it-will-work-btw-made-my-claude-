@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "voidstalker:void_stone",
+    "voidstalker:corrupted_stone",
+    "voidstalker:void_crystal_ore",
+    "voidstalker:void_bricks",
+    "voidstalker:ancient_void_block"
+  ]
+}
