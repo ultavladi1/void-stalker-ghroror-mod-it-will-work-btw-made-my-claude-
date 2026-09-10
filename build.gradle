@@ -1,12 +1,56 @@
-org.gradle.jvmargs=-Xmx2G
-org.gradle.parallel=true
+plugins {
+    id "net.fabricmc.fabric-loom" version "${loom_version}"
+    id "maven-publish"
+}
 
-minecraft_version=26.2
-loader_version=0.19.3
-loom_version=1.17.20
+version = project.mod_version
+group = project.maven_group
 
-mod_version=1.0.0
-maven_group=net.voidstalker
-archives_base_name=void-stalker
+base {
+    archivesName = project.archives_base_name
+}
 
-fabric_api_version=0.154.0+26.2
+repositories {
+    // Fabric repositories are provided by Loom
+}
+
+loom {
+    splitEnvironmentSourceSets()
+
+    mods {
+        "voidstalker" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+}
