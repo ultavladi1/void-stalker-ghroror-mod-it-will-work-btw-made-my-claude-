@@ -20,23 +20,27 @@ jobs:
           distribution: temurin
           java-version: '25'
 
-      - name: Set up Gradle 9.3.0
-        uses: gradle/actions/setup-gradle@v6
-        with:
-          gradle-version: '9.3.0'
+      - name: Install Gradle 9.3.0
+        run: |
+          curl -L https://services.gradle.org/distributions/gradle-9.3.0-bin.zip -o gradle.zip
+          unzip -q gradle.zip
+          echo "$PWD/gradle-9.3.0/bin" >> "$GITHUB_PATH"
 
-      - name: Build mod
+      - name: Check Gradle
+        run: gradle --version
+
+      - name: Build Mod
         run: gradle clean build --no-daemon --stacktrace
 
-      - name: Show generated JAR
+      - name: Find JAR
         if: always()
         run: |
-          echo "=== build/libs ==="
-          ls -lah build/libs || true
-          echo "=== JAR FILES ==="
+          echo "=== JARS ==="
           find . -type f -name "*.jar" -print
+          echo "=== BUILD/LIBS ==="
+          ls -lah build/libs || true
 
-      - name: Upload mod JAR
+      - name: Upload JAR
         if: success()
         uses: actions/upload-artifact@v4
         with:
