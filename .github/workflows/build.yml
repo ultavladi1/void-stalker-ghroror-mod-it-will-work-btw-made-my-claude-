@@ -20,11 +20,11 @@ jobs:
           distribution: temurin
           java-version: '25'
 
-      - name: Install Gradle 9.3.0
+      - name: Install Gradle 9.5.1
         run: |
-          curl -L https://services.gradle.org/distributions/gradle-9.3.0-bin.zip -o gradle.zip
+          curl -L https://services.gradle.org/distributions/gradle-9.5.1-bin.zip -o gradle.zip
           unzip -q gradle.zip
-          echo "$PWD/gradle-9.3.0/bin" >> "$GITHUB_PATH"
+          echo "$PWD/gradle-9.5.1/bin" >> "$GITHUB_PATH"
 
       - name: Check Gradle
         run: gradle --version
@@ -36,9 +36,9 @@ jobs:
         if: always()
         run: |
           echo "=== JARS ==="
-          find . -type f -name "*.jar" -print
+          find build/libs -type f -name "*.jar" -print 2>/dev/null || true
           echo "=== BUILD/LIBS ==="
-          ls -lah build/libs || true
+          ls -lah build/libs 2>/dev/null || true
 
       - name: Upload JAR
         if: success()
